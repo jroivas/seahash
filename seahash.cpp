@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 #include <cstdint>
 
 #include "seastate.hh"
@@ -50,6 +51,6 @@ int main(int argc, char **argv)
         state.update(d, l);
     }
     src.close();
-    std::cout << std::hex << state.finalize() << "\n";
+    std::cout << std::hex << std::setw(16) << std::setfill('0') << state.finalize() << "\n";
     return 0;
 }
