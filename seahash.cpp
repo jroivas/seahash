@@ -12,7 +12,7 @@ uint64_t readData(std::ifstream &s, uint64_t &i)
     while (!s.eof() && s.good() && i < sizeof(uint64_t)) {
         char c = s.get();
         if (!s.eof()) {
-            res |= uint64_t(c) << (i * 8);
+            res |= uint64_t(uint8_t(c)) << (i * 8);
             ++i;
         }
     }
